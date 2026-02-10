@@ -13,17 +13,17 @@ import os
 MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/model.pkl"))
 
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=[
-#         "https://git-cicd-1-ngtw.onrender.com",  # ← your Streamlit URL
-#         "http://localhost:8501",                 # for local testing
-#         "*"                                      # temporary wildcard for quick test (remove later)
-#     ],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://git-cicd-1-ngtw.onrender.com",  # ← your Streamlit URL
+        "http://localhost:8501",                 # for local testing
+        "*"                                      # temporary wildcard for quick test (remove later)
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # MODEL_PATH = r"D:\mlops_sample_cicid\backend\models\model.pkl" 
 try:
