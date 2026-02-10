@@ -6,10 +6,10 @@ import numpy as np
 
 app = FastAPI(title="Linear Regression API")
 
-# import os
-# MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/model.pkl"))
+import os
+MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/model.pkl"))
 
-MODEL_PATH = r"D:\mlops_sample_cicid\backend\models\model.pkl" 
+# MODEL_PATH = r"D:\mlops_sample_cicid\backend\models\model.pkl" 
 try:
     with open(MODEL_PATH, "rb") as f:
         model = pickle.load(f)
