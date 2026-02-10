@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Linear Regression API")
 
-API_URL = "https://git-cicd-b42r.onrender.com/predict"
+
 
 import os
 MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/model.pkl"))
@@ -15,11 +15,7 @@ MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/model.pkl"))
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://git-cicd-1-ngtw.onrender.com",  # ← your Streamlit URL
-        "http://localhost:8501",                 # for local testing
-        "*"                                      # temporary wildcard for quick test (remove later)
-    ],
+    allow_origins=["*"],  # Or ["https://git-cicd-1-ngtw.onrender.com"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
